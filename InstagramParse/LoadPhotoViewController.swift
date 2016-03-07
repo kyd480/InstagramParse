@@ -52,6 +52,15 @@ class LoadPhotoViewController: UIViewController, UIImagePickerControllerDelegate
                     print(error?.localizedDescription)
                 }
             })
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "No Image Selected", preferredStyle: .Alert)
+            let OKAction = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                // do nothing
+            })
+            
+            alertController.addAction(OKAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
